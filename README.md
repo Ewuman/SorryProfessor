@@ -11,7 +11,7 @@ An excuse generator for when you "unfortunately" have "unforeseen circumstances"
 Clone this repository to your local machine by running the command below:
 
 ```bash
-git clone https://github.com/HackAtUCI/tech-deliverable.git
+git clone https://github.com/IanWearsHat/SorryProfessor.git
 ```
 
 ### Installing dependencies
