@@ -1,0 +1,98 @@
+:root {
+    --generatedTextPanelGap: 1rem;
+    --warningBackground: #2f3233;
+    --emailBackground: #F6F4EB;
+    --emailPanelbackground: #86A789;
+    --selectorsPanelBackground: #86A789;
+    --absurditySelectorBackground: #2f3233;
+    --professorFieldBackground: #2f3233;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    background-color: var(--emailPanelbackground);
+}
+
+p {
+    margin: 0;
+    line-height: 55px;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+    text-indent: 24px;
+}
+
+/* SelectorsPanel */
+.selectorsPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 20vw;
+    /* height: 100vh; */
+    background-color: var(--selectorsPanelBackground);
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /* border-right: 0.3rem solid rgb(71, 69, 69); */
+}
+
+.absurditySelector {
+    width: 70%;
+    height: 40%;
+    margin-top: 1rem;
+    background-color: var(--absurditySelectorBackground);
+}
+
+.professorInputField {
+    width: 70%;
+    height: 40%;
+    background-color: var(--professorFieldBackground);
+}
+
+/* GeneratedTextPanel */
+.generatedTextPanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 80vw;
+    /* height: 100vh; */
+    background-color: var(--emailPanelbackground);
+}
+
+.warningPanel {
+    width: calc(100% - 2 * var(--generatedTextPanelGap));
+    /* height: calc(20% - var(--generatedTextPanelGap)); */
+    height: 8rem;
+    margin-bottom: var(--generatedTextPanelGap);
+    margin-top: var(--generatedTextPanelGap);
+    background-color: var(--warningBackground);
+
+    border-radius: 16px;
+}
+
+.emailPanel {
+    width: calc(100% - 2 * var(--generatedTextPanelGap));
+    /* height: calc(80% - 2 * var(--generatedTextPanelGap)); */
+    background-color: var(--emailBackground);
+
+    border-radius: 16px;
+
+    padding-top: 0.2rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+}
+
+.generatedText {
+    border: 0;
+    margin: 1.5rem 2rem;
+    text-indent: 40px;
+    line-height: 40px;
+}
+
+.endingText, .nameText {
+    margin: 0;
+    border: none;
+}
