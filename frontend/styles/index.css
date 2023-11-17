@@ -1,24 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:500|Poppins:400');
+
+:root {
+    font-family: 'Poppins';
+}
+
 body {
+    background: rgb(15,51,113);
+    background: linear-gradient(75deg, rgba(15,51,113,1) 0%, rgba(31,111,247,1) 32%, rgb(108, 144, 202) 74%, rgb(95, 102, 116) 100%);
+    background-size: 180% 180%;
+    animation: gradient-animation 20s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.Sorry {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transform: translateY(60%);
-
+    height: 80vh;
 }
 
 h1 {
     font-size: 600%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /* color: rgb(43, 43, 190); */
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: #fffdfd;;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+
+    /* line-height: 100%;
+    background-color: rgb(62, 65, 64);
+    padding: 2rem;
+    margin: 0;
+    margin-top: 5rem;
+    border-radius: 16px;
+    border: 2px solid black; */
+    border-bottom: solid 4px black;
+    border-left: solid 4px black;
+    padding: 7px 50px;
+    position: relative;
+}
+
+h1:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    content: '';
+    border-top: solid 4px black;
+    width: 35px;
 }
 
 button {
     font-size: 190%;
-    /* background-color: rgb(50, 34, 196); */
-    /* color: rgb(153, 161, 207); */
-    border: none;
-    border-radius: 10px;
+    background-color: #141457;
+    color: #fffdfd;
+    border: 1px groove black;
+    border-radius: 12px;
     padding: 15px;
     min-height: 30px;
     min-width: 120px;
@@ -31,4 +82,32 @@ button:hover {
 
 button:active {
     background-color: var(--emailPanelbackground);
+}
+
+.backgroundText {
+    margin: 0;
+    position: absolute;
+    filter: blur(5px);
+    text-align: justify;
+    z-index: -1;
+
+    color: #180202;
+
+    font-size: 60px;
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+
+.secondHeading {
+    font-weight: 500;
+    font-size: 36px;
+    margin-bottom: 4rem;
+}
+
+.animatedText {
+    color: rgb(11, 10, 85);
+
+    font-family: 'Poppins';
+    font-weight: 400;
+    border-right: 2px solid black;
 }

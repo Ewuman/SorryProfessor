@@ -1,11 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:500|Poppins:400');
+
+
+
 :root {
     --generatedTextPanelGap: 1rem;
     --warningBackground: #2f3233;
     --emailBackground: #F6F4EB;
-    --emailPanelbackground: #86A789;
-    --selectorsPanelBackground: #86A789;
+    --emailPanelbackground: #2b298a;
+    --selectorsPanelBackground: var(--emailPanelbackground);
     --absurditySelectorBackground: #2f3233;
     --professorFieldBackground: #2f3233;
+
+    --inputBackground: #2f3233;
+    --inputInvertedBackground: #F6F4EB;
+
+    --inputBorderSize: 4px;
+    font-family: 'Poppins';
 }
 
 body {
@@ -18,8 +28,6 @@ p {
     margin: 0;
     line-height: 55px;
     font-size: 30px;
-    border-bottom: 1px solid black;
-    text-indent: 24px;
 }
 
 /* SelectorsPanel */
@@ -27,15 +35,37 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    width: 20vw;
-    /* height: 100vh; */
-    background-color: var(--selectorsPanelBackground);
+    width: 360px;
+    /* background-color: var(--selectorsPanelBackground);  */
+    background-color: #72b377;
+
+    border-radius: 16px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    padding: 2rem;
+    padding-top: 0;
 
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    /* border-right: 0.3rem solid rgb(71, 69, 69); */
+}
+
+.selectorsPanel > p {
+    color: rgb(255, 253, 239);
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 0.4rem;
+    line-height: 36px;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(255, 253, 239);
+}
+
+.selectorsPanel > h1 {
+    margin: 0;
+    margin-top: 1rem;
 }
 
 .absurditySelector {
@@ -45,27 +75,90 @@ p {
     background-color: var(--absurditySelectorBackground);
 }
 
+.professorInputContainer {
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.generateButton {
+    font-size: 24px;
+    width: 200px;
+    height: 60px;
+    border: 1px solid white;
+    border-radius: 12px;
+    background-color: var(--inputInvertedBackground);
+    color: var(--inputBackground);
+
+    margin-top: 2rem;
+    
+}
+
+.generateButton:hover {
+    animation-name: professorInputButtonAnimation;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+@keyframes professorInputButtonAnimation {
+    from {
+        background-color: var(--inputInvertedBackground);
+        color: var(--inputBackground);
+    }
+    to {
+        background-color: var(--inputBackground);
+        color: var(--inputInvertedBackground);
+    }
+}
+
 .professorInputField {
-    width: 70%;
-    height: 40%;
+    height: 44px;
+    width: 100%;
+    line-height: 44px;
+    font-size: 24px;
+    font-family: 'Poppins';
+
     background-color: var(--professorFieldBackground);
+    color: var(--emailBackground);
+
+    border-bottom: var(--inputBorderSize) solid rgba(0, 0, 0, 0);
+    padding-left: 14px;
+    resize: none;
+}
+
+.professorInputField:focus {
+    outline: 0;
+    animation-name: input-animation;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes input-animation {
+    from {border-bottom: var(--inputBorderSize) solid rgba(0, 0, 0, 0);}
+    to {border-bottom: var(--inputBorderSize) solid rgb(252, 51, 252);}
 }
 
 /* GeneratedTextPanel */
 .generatedTextPanel {
+    /* position: absolute; */
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    width: 80vw;
-    /* height: 100vh; */
+    width: calc((100% - 360px));
+    /* left: 360px; */
+    
+    
     background-color: var(--emailPanelbackground);
 }
 
 .warningPanel {
     width: calc(100% - 2 * var(--generatedTextPanelGap));
-    /* height: calc(20% - var(--generatedTextPanelGap)); */
+    /* height: calc(20vh - var(--generatedTextPanelGap)); */
     height: 8rem;
     margin-bottom: var(--generatedTextPanelGap);
     margin-top: var(--generatedTextPanelGap);
@@ -76,23 +169,67 @@ p {
 
 .emailPanel {
     width: calc(100% - 2 * var(--generatedTextPanelGap));
-    /* height: calc(80% - 2 * var(--generatedTextPanelGap)); */
+    min-height: calc(80vh - 2 * var(--generatedTextPanelGap));
+    /* height: 100vh; */
     background-color: var(--emailBackground);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
 
     border-radius: 16px;
-
+    /* margin-bottom: var(--generatedTextPanelGap); */
     padding-top: 0.2rem;
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+
+    border: 2px solid rgb(42, 42, 42);
+    
+}
+
+.headingText {
+    border-bottom: 1px solid black;
+    text-indent: 24px;
 }
 
 .generatedText {
+    display: inline-block;
     border: 0;
     margin: 1.5rem 2rem;
     text-indent: 40px;
     line-height: 40px;
+    font-weight: 500;
 }
 
 .endingText, .nameText {
     margin: 0;
+    margin-left: 20px;
     border: none;
+}
+
+.bottomRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nameText {
+    margin-bottom: 1rem;
+}
+
+.copyButton {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    background-color: #abecb0;
+}
+
+.copyButton:hover {
+    background-color: #72b377;
+}
+
+.copyButton:active {
+    background-color: #2f3233;
+}
+
+.copyButton > img {
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem;
 }

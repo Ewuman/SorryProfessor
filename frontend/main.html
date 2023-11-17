@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./styles/main.css" />
     <title>Main</title>
 </head>
 <body>
     <div class="selectorsPanel">
-        <div class="absurditySelector">
+        <!-- <div class="absurditySelector">
 
+        </div> -->
+        <!-- <h1>Enter options</h1> -->
+        
+        <p>Enter Professor</p>
+        <div class="professorInputContainer">
+            
+            <textarea class="professorInputField"></textarea>
+            <!-- <button>-- ></button> -->
         </div>
-        <div class="professorInputField">
 
+        <p>Enter excuse</p>
+        <div class="professorInputContainer">
+            
+            <textarea class="professorInputField"></textarea>
+            <!-- <button>-- ></button> -->
         </div>
 
-        <button>
-            Generate Excuse
-        </button>
+        <p>Enter assignment type</p>
+        <div class="professorInputContainer">
+            
+            <textarea class="professorInputField"></textarea>
+            <!-- <button onclick="onGenerateText()">-- ></button> -->
+        </div>
+
+        <button class="generateButton" onclick="onGenerateText()">Generate</button>
+        
+        
+
+        
     </div>
 
     <div class="generatedTextPanel">
@@ -26,12 +50,17 @@
         </div>
 
         <div class="emailPanel">
-            <p>To:</p>
-            <p>Subject:</p>
-            <p class="generatedText">Pellentesque sodales tellus lectus, quis egestas nibh sollicitudin sed. Curabitur in ante sed quam volutpat volutpat. Aenean vel imperdiet ex, et suscipit odio. Praesent nec erat suscipit, vehicula justo at, varius ante. Cras vehicula vehicula dictum. Suspendisse convallis dapibus luctus. Donec fringilla magna ante, ornare semper metus vehicula auctor. Pellentesque sit amet dictum nisl. In imperdiet arcu sed tempor commodo. Donec justo neque, finibus sed placerat vitae, ornare eget quam.</p>
+            <p class="headingText">To:</p>
+            <p class="headingText">Subject:</p>
+            <p class="generatedText">•</p>
             <p class="endingText">Sincerely,</p>
-            <p class="nameText">A Deeply Responsible, but Unfortunate, Student</p>
+            <div class="bottomRow">
+                <p class="nameText">A Deeply Responsible, but Unfortunate, Student</p>
+                <button class="copyButton" onclick="copyToClipboard()"><img src="./public/4623890-200.png"/></button>
+            </div>
+            
         </div>
     </div>
+    <script src="./main.js"></script>
 </body>
 </html>
