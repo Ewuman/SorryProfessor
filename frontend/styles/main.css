@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:400');
+
+
+
 :root {
     --generatedTextPanelGap: 1rem;
     --warningBackground: #2f3233;
     --emailBackground: #F6F4EB;
-    --emailPanelbackground: #86A789;
-    --selectorsPanelBackground: #86A789;
+    --emailPanelbackground: #abecb0;
+    --selectorsPanelBackground: var(--emailPanelbackground);
     --absurditySelectorBackground: #2f3233;
     --professorFieldBackground: #2f3233;
 
@@ -11,7 +15,7 @@
     --inputInvertedBackground: #F6F4EB;
 
     --inputBorderSize: 4px;
-    font-family: 'Lora', serif;
+    font-family: 'Poppins';
 }
 
 body {
@@ -158,12 +162,13 @@ p {
     
 }
 
-.emailPanel > p {
+.headingText {
     border-bottom: 1px solid black;
     text-indent: 24px;
 }
 
 .generatedText {
+    display: inline-block;
     border: 0;
     margin: 1.5rem 2rem;
     text-indent: 40px;
@@ -172,5 +177,38 @@ p {
 
 .endingText, .nameText {
     margin: 0;
+    margin-left: 20px;
     border: none;
+}
+
+.bottomRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nameText {
+    margin-bottom: 1rem;
+}
+
+.copyButton {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    background-color: #abecb0;
+}
+
+.copyButton:hover {
+    background-color: #72b377;
+}
+
+.copyButton:active {
+    background-color: #2f3233;
+}
+
+.copyButton > img {
+    width: 40px;
+    height: 40px;
+    padding: 0.5rem;
 }

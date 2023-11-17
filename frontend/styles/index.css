@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700|Poppins:500|Poppins:400');
+
+:root {
+    font-family: 'Poppins';
+}
+
 body {
-    background: linear-gradient(230deg,#1d2d80,#5a5f7a,#000000);
+    /* background: linear-gradient(230deg,#1d2d80,#5a5f7a,#000000); */
+    /* background-color: rgb(255, 252, 246); */
+    background: rgb(255,166,32);
+    background: linear-gradient(90deg, rgba(255,166,32,1) 0%, rgba(236,62,203,1) 100%);
     background-size: 180% 180%;
     animation: gradient-animation 24s ease infinite;
+    overflow: hidden;
 }
 
 @keyframes gradient-animation {
@@ -26,16 +36,28 @@ body {
 
 h1 {
     font-size: 600%;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    /* color: rgb(43, 43, 190); */
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: #4ab57a;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+
+    line-height: 100%;
+    background-color: #fffdfd;
+    padding: 2rem;
+    margin: 0;
+    margin-top: 5rem;
+    border-radius: 16px;
+    border: 2px solid black;
 }
 
 button {
     font-size: 190%;
-    /* background-color: rgb(50, 34, 196); */
-    /* color: rgb(153, 161, 207); */
-    border: none;
-    border-radius: 10px;
+    background-color: rgb(74, 231, 192);
+    color: rgb(34, 34, 34);
+    border: 1px groove black;
+    border-radius: 12px;
     padding: 15px;
     min-height: 30px;
     min-width: 120px;
@@ -48,4 +70,31 @@ button:hover {
 
 button:active {
     background-color: var(--emailPanelbackground);
+}
+
+.backgroundText {
+    margin: 0;
+    position: absolute;
+    filter: blur(5px);
+    text-align: justify;
+    z-index: -1;
+
+    color: #180202;
+
+    font-size: 60px;
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+
+.secondHeading {
+    font-weight: 500;
+    font-size: 36px;
+    margin-bottom: 4rem;
+}
+
+.animatedText {
+    color: rgb(98, 0, 255);
+    font-family: 'Poppins';
+    font-weight: 400;
+    border-right: 2px solid black;
 }
