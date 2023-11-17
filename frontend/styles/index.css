@@ -1,10 +1,27 @@
 body {
+    background: linear-gradient(230deg,#1d2d80,#5a5f7a,#000000);
+    background-size: 180% 180%;
+    animation: gradient-animation 24s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.Sorry {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transform: translateY(60%);
-
+    height: 80vh;
 }
 
 h1 {
