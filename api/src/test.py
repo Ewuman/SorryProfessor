@@ -1,4 +1,3 @@
-import pprint
 import google.generativeai as palm
 import google.generativeai.types as safety_types
 
@@ -24,7 +23,7 @@ Instead, make a request with a very detailed description of the fact that {excus
 completion = palm.generate_text(
     model=model,
     prompt=prompt,
-    temperature=0,
+    temperature=1.0,
     safety_settings=[
         {
             "category": safety_types.HarmCategory.HARM_CATEGORY_DEROGATORY,
